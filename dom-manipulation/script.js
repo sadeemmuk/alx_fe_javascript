@@ -38,9 +38,10 @@ function addQuote(){
 
 function showRandomQuote(){
     let q = document.getElementById('quoteDisplay');
- 
+ newOne = quotes[Math.floor(Math.random() * quotes.length)].qoute;
+ newCat =quotes[Math.floor(Math.random() * quotes.length)].category;
 //   console.log(quotes.qoute[Math.random(0, 3)]);
-q.innerHTML = quotes[Math.floor(Math.random() * quotes.length)].qoute;
+q.innerHTML = newOne + newCat;
 
 addQuote();
 
