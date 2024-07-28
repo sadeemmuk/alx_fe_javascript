@@ -30,18 +30,17 @@ function addQuote(){
     }
     quotes.push(hello);
 
-
     newQuoteText.value = "";
     newCatogery.value = "";
     }
 }
 
 
-function displayRandomQuote(){
+function showRandomQuote(){
     let q = document.getElementById('quoteDisplay');
  
 //   console.log(quotes.qoute[Math.random(0, 3)]);
-q.textContent= quotes[Math.floor(Math.random() * quotes.length)].qoute;
+q.innerHTML= quotes[Math.floor(Math.random() * quotes.length)].qoute;
 
 addQuote();
 
