@@ -41,7 +41,7 @@ function showRandomQuote(){
  newOne = quotes[Math.floor(Math.random() * quotes.length)].qoute;
  newCat =quotes[Math.floor(Math.random() * quotes.length)].category;
 //   console.log(quotes.qoute[Math.random(0, 3)]);
-q.innerHTML = newOne + newCat;
+q.textContent = newOne + newCat;
 
 addQuote();
 
