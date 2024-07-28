@@ -29,7 +29,7 @@ function addQuote(){
         category: newCatogery.value
     }
     quotes.push(hello);
-    
+
 
     newQuoteText.value = "";
     newCatogery.value = "";
@@ -37,7 +37,7 @@ function addQuote(){
 }
 
 
-function showRandomQuote(){
+function displayRandomQuote(){
     let q = document.getElementById('quoteDisplay');
  
 //   console.log(quotes.qoute[Math.random(0, 3)]);
