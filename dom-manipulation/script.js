@@ -1,4 +1,5 @@
 
+
 let quotes = [
     {
         text:"to be or not to be that is the question",
@@ -20,7 +21,12 @@ function addQuote(){
         text: newQuoteText.value,
         category: newCatogery.value
     }
+
     quotes.push(createAddQuoteForm);
+    window.localStorage.setItem('text', createAddQuoteForm.text);
+    window.localStorage.setItem('category', createAddQuoteForm.category);
+    
+
 
     newQuoteText.value = "";
     newCatogery.value = "";
@@ -30,13 +36,13 @@ function addQuote(){
 
 function showRandomQuote(){
     let q = document.getElementById('quoteDisplay');
-    let tet = document.createElement('q');
+    
 
  newOne = quotes[Math.floor(Math.random() * quotes.length)].text;
  newCat =quotes[Math.floor(Math.random() * quotes.length)].category;
-//   console.log(quotes.qoute[Math.random(0, 3)]);
-tet.innerHTML = newOne + newCat;
-q.appendChild(tet);
+
+q.innerHTML = `"${newOne}" ${newCat}`;
+
 
 addQuote();
 
