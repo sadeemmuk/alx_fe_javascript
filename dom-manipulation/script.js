@@ -1,7 +1,7 @@
 
 let quotes = [
     {
-        qoute:"to be or not to be that is the question",
+        text:"to be or not to be that is the question",
         category:10
     },
 ]
@@ -30,10 +30,13 @@ function addQuote(){
 
 function showRandomQuote(){
     let q = document.getElementById('quoteDisplay');
- newOne = quotes[Math.floor(Math.random() * quotes.length)].qoute;
+    let tet = document.createElement('q');
+
+ newOne = quotes[Math.floor(Math.random() * quotes.length)].text;
  newCat =quotes[Math.floor(Math.random() * quotes.length)].category;
 //   console.log(quotes.qoute[Math.random(0, 3)]);
-q.innerHTML = newOne + newCat;
+tet.innerHTML = newOne + newCat;
+q.appendChild(tet);
 
 addQuote();
 
