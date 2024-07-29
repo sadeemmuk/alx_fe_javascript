@@ -16,11 +16,11 @@ function addQuote(){
     let newCatogery = document.getElementById('newQuoteCategory');
 
     if(newQuoteText.value !== "" && newCatogery.value !== ""){
-    let hello = {
+    let createAddQuoteForm = {
         text: newQuoteText.value,
         category: newCatogery.value
     }
-    quotes.push(hello);
+    quotes.push(createAddQuoteForm);
 
     newQuoteText.value = "";
     newCatogery.value = "";
@@ -29,11 +29,11 @@ function addQuote(){
 
 
 function showRandomQuote(){
-    let AddQuoteForm = document.getElementById('quoteDisplay');
+    let q = document.getElementById('quoteDisplay');
  newOne = quotes[Math.floor(Math.random() * quotes.length)].qoute;
  newCat =quotes[Math.floor(Math.random() * quotes.length)].category;
 //   console.log(quotes.qoute[Math.random(0, 3)]);
-AddQuoteForm.innerHTML = newOne + newCat;
+q.innerHTML = newOne + newCat;
 
 addQuote();
 
