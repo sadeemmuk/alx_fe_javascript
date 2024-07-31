@@ -1,3 +1,10 @@
+let quotes = [
+  {
+    text: "",
+    category: ""
+  }
+  ]
+
 let newQuote = document.getElementById('newQuote');
 
 newQuote.addEventListener('click', showRandomQuote);
@@ -13,6 +20,7 @@ function addQuote(){
     // }
 
     // quotes.push(createAddQuoteForm);
+    
     window.localStorage.setItem(newQuoteText.value, newCatogery.value);
 
     newQuoteText.value = "";
@@ -51,6 +59,10 @@ function download(content, fileName, contentType){
   }
 
 
+  function saveQuotes(){
+    addQuote();
+  }
+
 function importFromJsonFile(event) {
     const fileReader = new FileReader();
     fileReader.onload = function(event) {
@@ -61,6 +73,26 @@ function importFromJsonFile(event) {
     };
     fileReader.readAsText(event.target.files[0]);
   }
+
+ 
+
+
+  // Filter quotes according to user interaction to the category 
+
+  function filterQuotes(){
+    let filter = document.getElementById('categoryFilter option:selected');
+
+    var keyFilter = Object.keys(localStorage);
+    keyFilter.filter((e)=>{
+      if (filter == 'all'){
+        console.log(e);
+      }
+    })
+    
+  }
+
+  filterQuotes();
+
 
  
 

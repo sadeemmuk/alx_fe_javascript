@@ -15,7 +15,15 @@
     <button onclick="addQuote()">Add Quote</button>
   </div>
   <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  <!--Button to download json file and export form the browser to the device-->
   <button onclick="onDownload()">Export Quotes</button>
+  <!--filtering quotes according the the category-->
+  <div>
+  <select id="categoryFilter" onchange="filterQuotes()">
+    <option value="all">All Categories</option>
+    <!-- Dynamically populated categories -->
+  </select>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
