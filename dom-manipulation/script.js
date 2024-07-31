@@ -29,6 +29,8 @@ function showRandomQuote(){
 
 var keys = Object.keys(localStorage);
 q.innerHTML = keys[Math.floor(Math.random() * keys.length)];
+window.localStorage.getItem(newQuoteText);
+
 
 addQuote();
 
