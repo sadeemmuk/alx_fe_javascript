@@ -80,14 +80,20 @@ function importFromJsonFile(event) {
   // Filter quotes according to user interaction to the category 
 
   function filterQuotes(){
-    let filter = document.getElementById('categoryFilter option:selected');
+    let filter = document.getElementById('categoryFilter');
 
-    var keyFilter = Object.keys(localStorage);
-    keyFilter.filter((e)=>{
-      if (filter == 'all'){
-        console.log(e);
-      }
-    })
+    var keyFilter = Object.values(localStorage);
+    
+    for (let i =0; i < keyFilter.length; i++){
+      const newOption = document.createElement('option');
+      const optionText = document.createTextNode(keyFilter[i]);
+      newOption.value = keyFilter[i];
+      newOption.appendChild(optionText);
+      filter.appendChild(newOption);
+
+    }
+    
+    
     
   }
 
