@@ -36,6 +36,20 @@ addQuote();
 
 }
 
+function download(content, fileName, contentType){
+  const a = document.createElement('a');
+  const file = new Blob([content], {type:contentType});
+  a.href = URL.createObjectURL(file);
+  a.download = fileName;
+  a.click();
+  }
+
+
+  function onDownload(){
+    var keyOne = Object.keys(localStorage);
+    download(JSON.stringify(keyOne), 'yourFile.json', 'application/json');
+  }
+
 
 function importFromJsonFile(event) {
     const fileReader = new FileReader();
@@ -47,3 +61,6 @@ function importFromJsonFile(event) {
     };
     fileReader.readAsText(event.target.files[0]);
   }
+
+ 
+
