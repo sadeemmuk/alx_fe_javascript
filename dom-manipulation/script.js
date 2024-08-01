@@ -104,9 +104,9 @@ function importFromJsonFile(event) {
   }
     
   function filterQuotes(){
-    const selectedQuotes = Object.values(localStorage).filter((s)=> s == filter.value);
+    const selectedCategory = Object.values(localStorage).filter((s)=> s == filter.value);
     let divcat = document.getElementById('categories');
-    if(!selectedQuotes){
+    if(!selectedCategory){
       for(let i = 0; i < Object.keys(localStorage).length; i++){
         const text = document.createTextNode(Object.keys(localStorage)[i]);
         const p = document.createElement('p');
@@ -115,8 +115,8 @@ function importFromJsonFile(event) {
         console.log(divcat);
       }
     }else{
-      for(let i = 0; i < selectedQuotes; i++){
-        const text = document.createElement(selectedQuotes[i]);
+      for(let i = 0; i < selectedCategory; i++){
+        const text = document.createElement(selectedCategory[i]);
         const p = document.createElement('p');
         p.appendChild(text);
         divcat.appendChild(p);
