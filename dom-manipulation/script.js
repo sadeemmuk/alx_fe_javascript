@@ -82,23 +82,28 @@ function importFromJsonFile(event) {
   function filterQuotes(){
     let filter = document.getElementById('categoryFilter');
 
-    var keyFilter = Object.values(localStorage);
-    
-    for (let i =0; i < keyFilter.length; i++){
-      const newOption = document.createElement('option');
-      const optionText = document.createTextNode(keyFilter[i]);
-      newOption.value = keyFilter[i];
-      newOption.appendChild(optionText);
-      filter.appendChild(newOption);
+    // var keyFilter = Object.values(localStorage);
 
-    }
+    // for (let i =0; i < keyFilter.length; i++){
+    //   const newOption = document.createElement('option');
+    //   const optionText = document.createTextNode(keyFilter[i]);
+    //   newOption.value = keyFilter[i];
+    //   newOption.appendChild(optionText);
+    //   filter.appendChild(newOption);
+
+    // }
+    const categ = [...new Set(Object.values(localStorage))];
+    categ.filter((q)=> {
+      let newOption = document.createElement('option');
+      let newText = document.createTextNode(q);
+      newOption.appendChild(newText);
+      filter.appendChild(newOption);
+    });
     
-    
-    
+   
   }
 
   filterQuotes();
 
 
- 
 
