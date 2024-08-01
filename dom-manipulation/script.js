@@ -91,14 +91,14 @@ function importFromJsonFile(event) {
     //   filter.appendChild(newOption);
 
     // }
-    const categ = Object.values(localStorage).map((cat)=>{
+    const populateCategories = Object.values(localStorage).map((cat)=>{
       return cat;
     });
     const catego = [...new Set(categ)];
-    for(i = 0; i < catego.length; i++){
+    for(i = 0; i < populateCategories.length; i++){
       if(catego[i]){
     let oneOp = document.createElement('option');
-    oneOp.textContent = catego[i];
+    oneOp.textContent = populateCategories[i];
     filter.appendChild(oneOp);
     }
   }
