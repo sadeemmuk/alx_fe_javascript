@@ -31,7 +31,6 @@ function addQuote(){
 
 
 
-
 function showRandomQuote(){
     let q = document.getElementById('quoteDisplay');
 
@@ -92,13 +91,17 @@ function importFromJsonFile(event) {
     //   filter.appendChild(newOption);
 
     // }
-    const categ = [...new Set(Object.values(localStorage))];
-    categ.filter((q)=> {
-      let newOption = document.createElement('option');
-      let newText = document.createTextNode(q);
-      newOption.appendChild(newText);
-      filter.appendChild(newOption);
+    const categ = Object.values(localStorage).map((cat)=>{
+      return cat;
     });
+    const catego = [...new Set(categ)];
+    for(i = 0; i < catego.length; i++){
+      if(catego[i]){
+    let oneOp = document.createElement('option');
+    oneOp.textContent = catego[i];
+    filter.appendChild(oneOp);
+    }
+  }
     
    
   }
