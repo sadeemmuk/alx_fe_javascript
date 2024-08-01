@@ -78,7 +78,7 @@ function importFromJsonFile(event) {
 
   // Filter quotes according to user interaction to the category 
 
-  function filterQuotes(){
+  
     let filter = document.getElementById('categoryFilter');
 
     // var keyFilter = Object.values(localStorage);
@@ -94,7 +94,7 @@ function importFromJsonFile(event) {
     const populateCategories = Object.values(localStorage).map((cat)=>{
       return cat;
     });
-    const catego = [...new Set(categ)];
+    const catego = [...new Set(populateCategories)];
     for(i = 0; i < populateCategories.length; i++){
       if(catego[i]){
     let oneOp = document.createElement('option');
@@ -103,10 +103,29 @@ function importFromJsonFile(event) {
     }
   }
     
-   
+  function filterQuotes(){
+    const selectedQuotes = Object.values(localStorage).filter((s)=> s == filter.value);
+    let divcat = document.getElementById('categories');
+    if(!selectedQuotes){
+      for(let i = 0; i < Object.keys(localStorage).length; i++){
+        const text = document.createTextNode(Object.keys(localStorage)[i]);
+        const p = document.createElement('p');
+        p.appendChild(text);
+        divcat.appendChild(p);
+        console.log(divcat);
+      }
+    }else{
+      for(let i = 0; i < selectedQuotes; i++){
+        const text = document.createElement(selectedQuotes[i]);
+        const p = document.createElement('p');
+        p.appendChild(text);
+        divcat.appendChild(p);
+        console.log(divcat);
+
+      }
+    }
   }
 
-  filterQuotes();
 
 
 
